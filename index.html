@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Monty Hall Problem Simulation</title>
+    <script type="text/javascript" src="js/phaser.min.js"></script>
+
+  </head>
+
+  <body>
+    <script type="text/javascript">
+
+      var MH_sim = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+
+      function preload() {
+        MH_sim.load.image('background', 'assets/background.jpg');
+        MH_sim.load.image('door_closed', 'assets/door_closed.jpg');
+        MH_sim.load.image('door_opened', 'assets/door_opened.jpg');
+        MH_sim.load.image('goose', 'assets/goose-2.jpg');
+        MH_sim.load.image('car', 'assets/winner_car.jpg');
+
+      }
+      var doors;
+      var winCount = 0;
+      var loseCount = 0;
+
+      function create() {
+        // Added simple background
+        MH_sim.add.sprite(0, 0, 'background');
+        doors = MH_sim.add.group();
+        door_left = doors.create(150, 150, 'door_closed');
+        door_mid = doors.create(350, 150, 'door_closed');
+        door_right = doors.create(550, 150, 'door_closed');
+      }
+
+      function update() {
+
+      }
+    </script>
+  </body>
+</html>
